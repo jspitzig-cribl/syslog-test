@@ -1,0 +1,65 @@
+version: "3.5"
+services:
+  logspout-1:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5005?filter.labels=app:1'
+  logspout-2:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5105?filter.labels=app:2'
+  logspout-3:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5205?filter.labels=app:3'
+  logspout-4:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5305?filter.labels=app:4'
+  logspout-5:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5405?filter.labels=app:5'
+  logspout-6:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5505?filter.labels=app:6'
+  logspout-7:
+    image: gliderlabs/logspout
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 'syslog://100.117.182.86:5605?filter.labels=app:7'
+  app-1:
+    build: .
+    labels:
+      - 'app=1'
+  app-2:
+    build: .
+    labels:
+      - 'app=2'
+  app-3:
+    build: .
+    labels:
+      - 'app=3'
+  app-4:
+    build: .
+    labels:
+      - 'app=4'
+  app-5:
+    build: .
+    labels:
+      - 'app=5'
+  app-6:
+    build: .
+    labels:
+      - 'app=6'
+  app-7:
+    build: .
+    labels:
+      - 'app=7'
